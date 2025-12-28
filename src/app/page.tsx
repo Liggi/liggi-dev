@@ -7,24 +7,24 @@ export default function Home() {
   const recentPosts = posts.slice(0, 10);
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
+    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
       <main className="mx-auto max-w-2xl px-6 py-16">
         <header className="mb-16">
-          <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+          <h1 className="text-3xl font-bold tracking-tight">
             Jason Liggi
           </h1>
-          <p className="mt-2 text-zinc-600 dark:text-zinc-400">
+          <p className="mt-2 text-[var(--muted)]">
             Notes, research, and explorations.
           </p>
         </header>
 
         <section>
-          <h2 className="mb-8 text-sm font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-500">
+          <h2 className="mb-8 text-sm font-semibold uppercase tracking-wider text-[var(--muted)]">
             Recent Posts
           </h2>
 
           {recentPosts.length === 0 ? (
-            <p className="text-zinc-500 dark:text-zinc-400">
+            <p className="text-[var(--muted)]">
               No posts yet. Check back soon.
             </p>
           ) : (
@@ -36,13 +36,13 @@ export default function Home() {
                       href={`/posts/${post.slug}`}
                       className="group block"
                     >
-                      <time className="text-sm text-zinc-500 dark:text-zinc-500">
+                      <time className="text-sm text-[var(--muted)]">
                         {format(parseISO(post.date), 'MMMM d, yyyy')}
                       </time>
-                      <h3 className="mt-1 text-lg font-medium text-zinc-900 group-hover:text-zinc-600 dark:text-zinc-100 dark:group-hover:text-zinc-300">
+                      <h3 className="mt-1 text-lg font-medium group-hover:opacity-70">
                         {post.title}
                       </h3>
-                      <p className="mt-2 text-zinc-600 dark:text-zinc-400 line-clamp-2">
+                      <p className="mt-2 text-[var(--muted)] line-clamp-2">
                         {post.excerpt}
                       </p>
                     </Link>
@@ -56,7 +56,7 @@ export default function Home() {
             <div className="mt-12">
               <Link
                 href="/posts"
-                className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+                className="text-sm font-medium text-[var(--muted)] hover:text-[var(--foreground)]"
               >
                 View all posts &rarr;
               </Link>
