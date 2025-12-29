@@ -57,7 +57,7 @@ function Diagram({ title, children }: { title?: string; children: React.ReactNod
       )}
       <div className="overflow-x-auto rounded-sm border border-[var(--border)] bg-gradient-to-b from-[#0d0d0d] to-[#0a0a0a]">
         <div className="h-px bg-gradient-to-r from-transparent via-[var(--accent)]/30 to-transparent" />
-        <pre className="p-5 font-mono text-[13px] leading-[1.6] tracking-wide text-[#b8b8b8]">
+        <pre className="p-3 md:p-5 font-mono text-[11px] md:text-[13px] leading-[1.6] tracking-wide text-[#b8b8b8]">
           {children}
         </pre>
       </div>
@@ -189,7 +189,7 @@ const VANILLA_TEMPLATE = `
 
 export default function Post() {
   return (
-    <main className="flex-1 p-4 md:p-8">
+    <main className="flex-1 p-4 md:p-8 overflow-x-hidden">
       <Link
         href="/"
         className="mb-6 inline-block text-xs text-[var(--muted)] hover:text-[var(--accent)]"
