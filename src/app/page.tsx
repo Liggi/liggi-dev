@@ -1,10 +1,9 @@
 import Link from 'next/link'
-import { getSortedPostsData } from '@/lib/posts'
-import { format, parseISO } from 'date-fns'
+import { getSortedPosts } from '@/lib/posts'
 import { Sidebar } from '@/components/Sidebar'
 
 export default function Home() {
-  const posts = getSortedPostsData()
+  const posts = getSortedPosts()
 
   return (
     <div className="flex min-h-screen bg-[var(--background)]">
@@ -13,17 +12,16 @@ export default function Home() {
       <main className="flex-1 p-8">
         <header className="mb-8">
           <div className="mb-2 text-xs text-[var(--muted)]">/workspace/posts</div>
-          <p className="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">
-            Daily sentiment reports and analysis. Sometimes AI-generated. Sometimes edited.
-            Sometimes both.
+          <p className="text-sm leading-relaxed text-[var(--muted)]">
+            Thoughts, things I'm working on, ideas, experiments. Sometimes written by me, sometimes an LLM. Sometimes a mix.
           </p>
         </header>
 
         {/* File list header */}
-        <div className="grid grid-cols-[auto_1fr_auto] gap-4 border-b-2 border-[var(--border)] pb-2 text-xs font-bold uppercase text-[var(--muted)]">
+        <div className="grid grid-cols-[50px_1fr_90px] gap-4 px-3 pb-2 text-xs font-bold uppercase text-[var(--muted)]">
           <span>ID</span>
           <span>Title</span>
-          <span>Date</span>
+          <span className="text-right">Date</span>
         </div>
 
         {/* Post list */}
@@ -32,7 +30,7 @@ export default function Home() {
             <Link
               key={post.slug}
               href={`/posts/${post.slug}`}
-              className="grid grid-cols-[auto_1fr_auto] gap-4 border-2 border-transparent bg-[var(--card)] p-3 text-left transition-all hover:border-[var(--border)] hover:bg-[var(--muted-bg)]"
+              className="grid grid-cols-[50px_1fr_90px] gap-4 border-2 border-transparent bg-[var(--card)] p-3 text-left transition-all hover:border-[var(--border)] hover:bg-[var(--muted-bg)]"
             >
               <span className="text-sm text-[var(--accent)]">
                 [{String(index + 1).padStart(3, '0')}]
@@ -40,8 +38,8 @@ export default function Home() {
               <span className="text-sm font-bold text-[var(--foreground)]">
                 {post.title}
               </span>
-              <span className="text-xs text-[var(--muted)]">
-                {format(parseISO(post.date), 'yyyy-MM-dd')}
+              <span className="text-right text-xs text-[var(--muted)]">
+                {post.date}
               </span>
             </Link>
           ))}
@@ -51,8 +49,7 @@ export default function Home() {
         <div className="mt-8 border-t-2 border-[var(--border)] bg-[var(--card)] p-3">
           <div className="flex items-center justify-between text-xs text-[var(--muted)]">
             <span>{posts.length} files</span>
-            <span>█▓▒░ Community sentiment analysis</span>
-            <span>Paradox Interactive</span>
+            <span>█▓▒░ liggi.dev</span>
           </div>
         </div>
       </main>

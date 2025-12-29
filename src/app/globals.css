@@ -131,4 +131,88 @@ h1, h2, h3, h4, h5, h6, p, a, span, li {
     border-radius: 2px;
     font-size: 0.875em;
   }
+
+  /* Section content within tabular layout */
+  .prose-terminal-section {
+    font-size: 0.875rem;
+    line-height: 1.8;
+    color: var(--foreground);
+  }
+
+  .prose-terminal-section h3 {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--foreground);
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .prose-terminal-section h3::before {
+    content: "→ ";
+    color: var(--muted);
+  }
+
+  .prose-terminal-section p {
+    margin-bottom: 1rem;
+  }
+
+  .prose-terminal-section ul,
+  .prose-terminal-section ol {
+    margin-bottom: 1rem;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .prose-terminal-section li {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: var(--muted-bg);
+    border-left: 3px solid var(--border);
+  }
+
+  .prose-terminal-section blockquote {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    border: 2px solid var(--border);
+    background: var(--accent-subtle);
+    padding: 1rem;
+    margin: 1.25rem 0;
+  }
+
+  .prose-terminal-section blockquote::before {
+    content: '"';
+    font-size: 2rem;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .prose-terminal-section blockquote p {
+    margin-bottom: 0;
+    font-style: italic;
+  }
+
+  .prose-terminal-section a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .prose-terminal-section strong {
+    font-weight: 600;
+    color: var(--foreground);
+  }
+
+  .prose-terminal-section hr {
+    border: none;
+    border-top: 2px solid var(--border);
+    margin: 1.5rem 0;
+  }
+
+  .prose-terminal-section code {
+    background: var(--muted-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 2px;
+    font-size: 0.875em;
+  }
 }
