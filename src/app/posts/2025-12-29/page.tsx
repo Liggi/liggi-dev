@@ -1,4 +1,21 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: "Teaching LLMs to Think in Old Norse",
+  description: "Research, personas, and quality filtering for procedural text generation. How I generated 14,000 culturally-authentic house mottos for Crusader Kings 3.",
+  openGraph: {
+    title: "Teaching LLMs to Think in Old Norse",
+    description: "Research, personas, and quality filtering for procedural text generation. How I generated 14,000 culturally-authentic house mottos for Crusader Kings 3.",
+    type: "article",
+    publishedTime: "2025-12-29",
+  },
+  twitter: {
+    card: "summary",
+    title: "Teaching LLMs to Think in Old Norse",
+    description: "How I generated 14,000 culturally-authentic house mottos for Crusader Kings 3.",
+  },
+}
 
 function Section({ number, title, children }: { number: string; title: string; children: React.ReactNode }) {
   return (

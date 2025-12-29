@@ -9,8 +9,21 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "liggi.dev",
+  title: {
+    default: "liggi.dev",
+    template: "%s | liggi.dev",
+  },
   description: "Notes, research, and explorations",
+  metadataBase: new URL("https://liggi.dev"),
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    siteName: "liggi.dev",
+  },
+  twitter: {
+    card: "summary",
+    creator: "@liggi",
+  },
 };
 
 export default function RootLayout({
