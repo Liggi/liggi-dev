@@ -2,12 +2,21 @@ import Link from 'next/link'
 
 function Section({ number, title, children }: { number: string; title: string; children: React.ReactNode }) {
   return (
-    <div className="mb-10 grid grid-cols-[auto_1fr] gap-6">
-      <div className="w-12 border-r-2 border-[var(--border)] pr-4 pt-1 text-right text-xs text-[var(--muted)]">
-        {number}
+    <div className="mb-10">
+      <div className="flex items-center gap-3 mb-4 md:hidden">
+        <span className="text-xs text-[var(--muted)]">{number}</span>
+        <h2 className="text-xl font-bold text-[var(--accent)]">{title}</h2>
       </div>
-      <div>
-        <h2 className="mb-4 text-xl font-bold text-[var(--accent)]">{title}</h2>
+      <div className="hidden md:grid grid-cols-[auto_1fr] gap-6">
+        <div className="w-12 border-r-2 border-[var(--border)] pr-4 pt-1 text-right text-xs text-[var(--muted)]">
+          {number}
+        </div>
+        <div>
+          <h2 className="mb-4 text-xl font-bold text-[var(--accent)]">{title}</h2>
+          {children}
+        </div>
+      </div>
+      <div className="md:hidden">
         {children}
       </div>
     </div>
@@ -61,9 +70,16 @@ function MottoGallery({ culture, mottos }: { culture: string; mottos: { lifestyl
     <div className="mb-4">
       <div className="mb-2 text-xs uppercase tracking-wider text-[var(--accent)]">{culture}</div>
       {mottos.map((m, i) => (
-        <div key={i} className="grid grid-cols-[80px_1fr] gap-4 border-b border-[var(--border)] py-2 last:border-0">
-          <span className="text-xs text-[var(--muted)]">{m.lifestyle}</span>
-          <div>
+        <div key={i} className="border-b border-[var(--border)] py-2 last:border-0">
+          <span className="text-xs text-[var(--muted)] block mb-1 md:hidden">{m.lifestyle}</span>
+          <div className="hidden md:grid grid-cols-[80px_1fr] gap-4">
+            <span className="text-xs text-[var(--muted)]">{m.lifestyle}</span>
+            <div>
+              <span className="text-[var(--foreground)]">"{m.motto}"</span>
+              {m.native && <div className="mt-1 text-xs italic text-[var(--muted)]">{m.native}</div>}
+            </div>
+          </div>
+          <div className="md:hidden">
             <span className="text-[var(--foreground)]">"{m.motto}"</span>
             {m.native && <div className="mt-1 text-xs italic text-[var(--muted)]">{m.native}</div>}
           </div>
@@ -173,7 +189,7 @@ const VANILLA_TEMPLATE = `
 
 export default function Post() {
   return (
-    <main className="flex-1 p-8">
+    <main className="flex-1 p-4 md:p-8">
       <Link
         href="/"
         className="mb-6 inline-block text-xs text-[var(--muted)] hover:text-[var(--accent)]"
@@ -181,7 +197,23 @@ export default function Post() {
         &larr; BACK TO INDEX
       </Link>
 
-      <div className="mb-8 grid grid-cols-[1fr_auto] gap-4 border-b-4 border-[var(--border)] pb-4">
+      {/* Mobile header */}
+      <div className="mb-8 border-b-4 border-[var(--border)] pb-4 md:hidden">
+        <div className="flex items-center gap-2 mb-2 text-xs text-[var(--muted)]">
+          <span>FILE: <span className="text-[var(--accent)]">001</span></span>
+          <span>•</span>
+          <span>2025-12-29</span>
+        </div>
+        <h1 className="mb-1 text-2xl font-bold text-[var(--foreground)]">
+          TEACHING LLMs TO THINK IN OLD NORSE
+        </h1>
+        <div className="text-xs text-[var(--muted)]">
+          Research, personas, and quality filtering for procedural text generation
+        </div>
+      </div>
+
+      {/* Desktop header */}
+      <div className="mb-8 hidden md:grid grid-cols-[1fr_auto] gap-4 border-b-4 border-[var(--border)] pb-4">
         <div>
           <h1 className="mb-1 text-3xl font-bold text-[var(--foreground)]">
             TEACHING LLMs TO THINK IN OLD NORSE

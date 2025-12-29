@@ -1,11 +1,13 @@
 import { Sidebar } from '@/components/Sidebar'
+import { MobileHeader } from '@/components/MobileHeader'
 import { posts } from '@/lib/posts'
 
 export default function AboutPage() {
   return (
-    <div className="flex min-h-screen bg-[var(--background)]">
+    <div className="flex flex-col md:flex-row min-h-screen bg-[var(--background)]">
+      <MobileHeader />
       <Sidebar postCount={posts.length} />
-      <main className="flex-1 p-8">
+      <main className="flex-1 p-4 md:p-8">
       <div className="max-w-4xl">
         <div className="space-y-10">
           {/* Section 01: about */}

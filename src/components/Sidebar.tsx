@@ -14,7 +14,7 @@ export function Sidebar({ postCount = 0 }: SidebarProps) {
   const isAbout = pathname === '/about'
 
   return (
-    <aside className="w-64 border-r-4 border-[var(--border)] bg-[var(--card)] p-6 flex flex-col min-h-screen">
+    <aside className="hidden md:flex w-64 border-r-4 border-[var(--border)] bg-[var(--card)] p-6 flex-col min-h-screen">
       <div className="mb-8">
         <div className="flex items-center justify-between mb-3">
           <div>
