@@ -1,4 +1,15 @@
+import type { Metadata } from 'next'
 import { SiteHeader } from '@/components/SiteHeader'
+
+const description = 'i work at talktoash.com, building AIs that help people with their mental wellbeing. for fun, i make LLMs generate narrative content, mostly for paradox games.'
+
+export const metadata: Metadata = {
+  title: 'about',
+  description,
+  alternates: { canonical: '/about' },
+  openGraph: { type: 'profile', locale: 'en_GB', siteName: 'liggi.dev', url: '/about', title: 'about · Jason Liggi', description },
+  twitter: { card: 'summary_large_image', creator: '@liggi', title: 'about · Jason Liggi', description },
+}
 
 const link = 'text-[var(--foreground)] underline decoration-[var(--border)] underline-offset-4 hover:decoration-[var(--accent)]'
 

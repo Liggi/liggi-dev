@@ -5,18 +5,28 @@ import {
   Section, P, Label, Note, Group, Groups, Motto, Mottos, NativeMotto, Insight, Diagram, Bullets, Steps, Stat,
 } from '@/components/post'
 
+const title = "Teaching LLMs to Think in Old Norse"
+const description = "Research, personas, and quality filtering for procedural text generation. How I generated 14,000 culturally-authentic house mottos for Crusader Kings 3."
+
 export const metadata: Metadata = {
-  title: "Teaching LLMs to Think in Old Norse",
-  description: "Research, personas, and quality filtering for procedural text generation. How I generated 14,000 culturally-authentic house mottos for Crusader Kings 3.",
+  title,
+  description,
+  authors: [{ name: "Jason Liggi", url: "https://www.liggi.dev" }],
+  alternates: { canonical: "/posts/2025-12-29" },
   openGraph: {
-    title: "Teaching LLMs to Think in Old Norse",
-    description: "Research, personas, and quality filtering for procedural text generation. How I generated 14,000 culturally-authentic house mottos for Crusader Kings 3.",
+    title,
+    description,
     type: "article",
     publishedTime: "2025-12-29",
+    authors: ["Jason Liggi"],
+    locale: "en_GB",
+    siteName: "liggi.dev",
+    url: "/posts/2025-12-29",
   },
   twitter: {
-    card: "summary",
-    title: "Teaching LLMs to Think in Old Norse",
+    card: "summary_large_image",
+    creator: "@liggi",
+    title,
     description: "How I generated 14,000 culturally-authentic house mottos for Crusader Kings 3.",
   },
 }

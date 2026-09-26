@@ -19,18 +19,21 @@ const departure = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "liggi.dev",
-    template: "%s | liggi.dev",
+    default: "Jason Liggi · software engineer, LLM obsessive",
+    template: "%s · Jason Liggi",
   },
-  description: "Notes, research, and explorations",
-  metadataBase: new URL("https://liggi.dev"),
+  description: "software engineer. LLM obsessive. i spend a lot of time figuring out how to make LLMs do interesting things, mostly narrative content for paradox games.",
+  authors: [{ name: "Jason Liggi", url: "https://www.liggi.dev" }],
+  metadataBase: new URL("https://www.liggi.dev"),
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "en_GB",
     siteName: "liggi.dev",
+    url: "/",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     creator: "@liggi",
   },
 };
