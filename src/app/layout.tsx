@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
+import { Newsreader } from "next/font/google";
+import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
-import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
-const jetbrainsMono = JetBrains_Mono({
+const newsreader = Newsreader({
   subsets: ["latin"],
-  variable: "--font-jetbrains-mono"
+  style: ["normal", "italic"],
+  axes: ["opsz"],
+  variable: "--font-newsreader",
+});
+
+// Departure Mono v1.500 (SIL OFL 1.1, see fonts/OFL.txt)
+const departure = localFont({
+  src: "./fonts/DepartureMono-Regular.woff2",
+  variable: "--font-departure",
 });
 
 export const metadata: Metadata = {
@@ -34,10 +42,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${jetbrainsMono.variable} antialiased`}>
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+      <body className={`${newsreader.variable} ${departure.variable} antialiased`}>
+        {children}
         <Analytics />
       </body>
     </html>

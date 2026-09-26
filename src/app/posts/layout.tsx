@@ -1,14 +1,9 @@
-import { Sidebar } from '@/components/Sidebar'
-import { posts } from '@/lib/posts'
+import { SiteHeader } from '@/components/SiteHeader'
 
-export default function PostsLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function PostsLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-screen bg-[var(--background)]">
-      <Sidebar postCount={posts.length} />
+    <div className="min-h-screen bg-[var(--background)]">
+      <SiteHeader />
       {children}
     </div>
   )
