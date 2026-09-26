@@ -4,12 +4,13 @@ import { getSortedPosts } from '@/lib/posts'
 import { SiteHeader, Ramp } from '@/components/SiteHeader'
 import { PixelReveal } from '@/components/PixelReveal'
 
-const featuredLine: Record<string, { quote: string; topics: string }> = {
-  '2025-12-29': { quote: 'The unwounded man has no saga', topics: 'crusader kings 3 · llms' },
+const featuredLine: Record<string, { quote: string; source: string; topics: string }> = {
+  '2026-09-26': { quote: 'Nobody wrote the Maccus story. It was sitting in the save.', source: 'from the post', topics: 'crusader kings 3 · llms' },
+  '2025-12-29': { quote: 'The unwounded man has no saga', source: 'a motto from the post', topics: 'crusader kings 3 · llms' },
 }
 
 function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).toLowerCase()
+  return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).toLowerCase().replace('sept', 'sep')
 }
 
 export default function Home() {
@@ -78,7 +79,7 @@ export default function Home() {
                       {extra && (
                         <blockquote className="motto self-end border-l border-[var(--accent)] pl-4 md:mb-1">
                           “{extra.quote}”
-                          <span className="mono mt-2 block not-italic text-[var(--muted)]">a motto from the post</span>
+                          <span className="mono mt-2 block not-italic text-[var(--muted)]">{extra.source}</span>
                         </blockquote>
                       )}
                     </Link>
