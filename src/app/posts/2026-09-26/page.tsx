@@ -126,8 +126,10 @@ export default function Post() {
             CK3’s writing is coherent. What I don’t like is the goofiness and the lack of relevance. Events are pre-written and drawn at random from pools, so everyone gets the same ones. The first live-written scene shows the difference:
           </P>
           <Groups>
-            <Group label="vanilla · “second-in-command”">
-              <P className="text-[17px]">You pick who takes over your camp if you fall, choosing between followers by their skill scores.</P>
+            <Group label="vanilla · “second-in-command” (abridged)">
+              <P className="text-[17px]">
+                The post of my second has lain vacant. […] Three candidates have stepped forward to offer themselves for the role. <span className="mono text-[var(--accent)]">[candidate_1]</span>, who offers to swear himself to me till his dying breath. <span className="mono text-[var(--accent)]">[candidate_2]</span>, who seems about ready to work himself into a stupour for me. And, of course, <span className="mono text-[var(--accent)]">[candidate_3]</span> — undoubtedly the best qualified at camp for the role.
+              </P>
             </Group>
             <Group label="live-written · “the knight’s petition”">
               <P className="text-[17px]">
